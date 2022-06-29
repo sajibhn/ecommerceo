@@ -1,0 +1,14 @@
+@import "./productcard";
+.products {
+  position: relative;
+
+  &__container {
+    background-color: $white;
+    padding: $p4;
+    margin-top: -150px;
+    @extend .grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1rem;
+    row-gap: 2.5rem;
+  }
+}
