@@ -1,0 +1,20 @@
+.grid__filter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: flex-end;
+  padding: $p2 0;
+
+  &__item {
+    cursor: pointer;
+
+    svg {
+      width: 50px;
+      height: 50px;
+
+      &:hover {
+        color: $red;
+      }
+    }
+  }
+}
