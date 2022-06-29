@@ -1,0 +1,24 @@
+.hero {
+  padding: 200px 0;
+  color: $white;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  @include sm {
+    padding: 45px 0;
+  }
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  p {
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+  }
+}
