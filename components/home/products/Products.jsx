@@ -4,7 +4,7 @@ import ProductCard from './ProductCard'
 import Grid from '../../grid/Grid'
 
 
-const Products = () => {
+const Products = ({ products }) => {
     return (
         <>
             <section className="products container">
@@ -15,13 +15,8 @@ const Products = () => {
                     <Grid />
                 </div>
                 <div className="products__container">
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
 
+                    {products.map((product) => <ProductCard key={product._id} product={product} />)}
                 </div>
             </section>
         </>

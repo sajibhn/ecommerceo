@@ -1,4 +1,5 @@
 .product__card {
+  cursor: pointer;
   &:hover &__cart {
     opacity: 0.9;
     visibility: visible;

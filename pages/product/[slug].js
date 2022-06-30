@@ -1,7 +1,6 @@
 import React from 'react'
 import { AiOutlineMinus, AiOutlinePlus, AiFillStar } from 'react-icons/ai';
 import StarRatingComponent from 'react-star-rating-component';
-import ProductCard from '../../components/home/products/ProductCard';
 
 const SingleProduct = () => {
     return (
@@ -63,3 +62,4 @@ const SingleProduct = () => {
 }
 
 export default SingleProduct
+

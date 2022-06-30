@@ -3,14 +3,22 @@
   position: relative;
   margin-top: -150px;
   background-color: $white;
-  padding: $p4;
+  padding: $p6;
 
   &__container {
     background-color: $white;
 
     @extend .grid;
     grid-template-columns: repeat(3, 1fr);
-    column-gap: 1rem;
+    column-gap: 2rem;
     row-gap: 2.5rem;
+
+    @include md {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include sm {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 }
