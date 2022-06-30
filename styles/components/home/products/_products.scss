@@ -7,18 +7,16 @@
 
   &__container {
     background-color: $white;
-
     @extend .grid;
-    grid-template-columns: repeat(3, 1fr);
     column-gap: 2rem;
     row-gap: 2.5rem;
 
     @include md {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, 1fr) !important;
     }
 
     @include sm {
-      grid-template-columns: repeat(1, 1fr);
+      grid-template-columns: repeat(1, 1fr) !important;
     }
   }
 }

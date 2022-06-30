@@ -8,6 +8,7 @@ export const StateContext = ({ children }) => {
     const [cartItems, setCartItems] = useState([]);
     const [totalPrice, setTotalPrice] = useState(0);
     const [totalQuantities, setTotalQuantities] = useState(0);
+    const [gridNumber, setGridNumber] = useState(3)
 
     let foundProduct;
     let index;
@@ -90,7 +91,9 @@ export const StateContext = ({ children }) => {
                 onRemove,
                 setCartItems,
                 setTotalPrice,
-                setTotalQuantities
+                setTotalQuantities,
+                gridNumber,
+                setGridNumber
             }}
         >
             {children}
