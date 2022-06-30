@@ -1,10 +1,14 @@
 .product-detail-container {
-  display: flex;
-  gap: 40px;
+  @extend .grid;
+  grid-template-columns: 2fr 3fr;
   margin: $m5;
   margin-top: $m7;
   color: #324d67;
   flex-wrap: nowrap;
+
+  @include md {
+    grid-template-columns: 1fr;
+  }
 
   @include md {
     margin: 20px;
@@ -51,7 +55,9 @@
       margin-top: 10px;
       align-items: center;
     }
-
+    .category {
+      margin-top: $m2;
+    }
     .buttons {
       display: flex;
       gap: 30px;

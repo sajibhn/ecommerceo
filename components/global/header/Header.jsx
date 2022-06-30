@@ -1,5 +1,6 @@
 import React from 'react'
 import { BsHandbag } from 'react-icons/bs'
+import Link from 'next/link'
 
 const Header = () => {
     return (
@@ -7,7 +8,9 @@ const Header = () => {
             <header className="header">
                 <nav className="container nav">
                     <div className="nav__logo">
-                        <h3>Ecommerceo</h3>
+                        <Link href="/">
+                            <h3>Ecommerceo</h3>
+                        </Link>
                     </div>
                     <div className="nav__cart">
                         <BsHandbag />

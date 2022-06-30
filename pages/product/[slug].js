@@ -1,30 +1,36 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { AiOutlineMinus, AiOutlinePlus, AiFillStar } from 'react-icons/ai';
 import StarRatingComponent from 'react-star-rating-component';
+import { sanityClient, urlFor } from '../../sanity';
 
-const SingleProduct = () => {
+const SingleProduct = ({ product }) => {
+    const [index, setIndex] = useState(0);
+
+    const { Category, image, name, price, rating, details } = product
+    console.log(Category)
     return (
         <div className='container'>
             <div className="product-detail-container">
                 <div>
                     <div className="image-container">
-                        <img src='https://cdn.shopify.com/s/files/1/0563/9661/1673/products/1_3b68063b-5ff8-4522-b856-0a253964464c.jpg?v=1650967080' className="product-detail-image" />
+                        <div className="image-container">
+                            <img src={urlFor(image && image[index])} className="product-detail-image" />
+                        </div>
                     </div>
                     <div className="small-images-container">
-
-                        <img
-                            src='https://cdn.shopify.com/s/files/1/0563/9661/1673/products/1_3b68063b-5ff8-4522-b856-0a253964464c.jpg?v=1650967080'
-                            className='small-image'
-                        />
-                        <img
-                            src='https://cdn.shopify.com/s/files/1/0563/9661/1673/products/1_3b68063b-5ff8-4522-b856-0a253964464c.jpg?v=1650967080'
-                            className='small-image'
-                        />
+                        {image?.map((item, i) => (
+                            <img
+                                key={i}
+                                src={urlFor(item)}
+                                className={i === index ? 'small-image selected-image' : 'small-image'}
+                                onMouseEnter={() => setIndex(i)}
+                            />
+                        ))}
                     </div>
                 </div>
 
                 <div className="product-detail-desc">
-                    <h1></h1>
+                    <h1>{name}</h1>
                     <div className="reviews">
                         <div>
                             <StarRatingComponent
@@ -32,7 +38,7 @@ const SingleProduct = () => {
                                 editing={false}
                                 renderStarIcon={() => <span><AiFillStar /></span>}
                                 starCount={5}
-                                value={4}
+                                value={rating}
                                 starColor="#e12c43"
                             />
                         </div>
@@ -41,8 +47,8 @@ const SingleProduct = () => {
                         </p>
                     </div>
                     <h4>Details: </h4>
-                    <p>Lorem ipsum dolor sit amet.</p>
-                    <p className="price">$5</p>
+                    <p>{details}</p>
+                    <p className="price">${price}</p>
                     <div className="quantity">
                         <h3>Quantity:</h3>
                         <p className="quantity-desc">
@@ -55,6 +61,10 @@ const SingleProduct = () => {
                         <button type="button" className="add-to-cart" >Add to Cart</button>
                         <button type="button" className="buy-now">Buy Now</button>
                     </div>
+
+                    <div className='category'>
+                        <p>Category: {Category}</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -63,3 +73,37 @@ const SingleProduct = () => {
 
 export default SingleProduct
 
+
+export const getStaticProps = async ({ params: { slug } }) => {
+    const query = `*[_type == "product" && slug.current == '${slug}'][0]`;
+
+    const product = await sanityClient.fetch(query);
+
+    console.log(product);
+
+    return {
+        props: { product }
+    }
+}
+
+export const getStaticPaths = async () => {
+    const query = `*[_type == "product"] {
+      slug {
+        current
+      }
+    }
+    `;
+
+    const products = await sanityClient.fetch(query);
+
+    const paths = products.map((product) => ({
+        params: {
+            slug: product.slug.current
+        }
+    }));
+
+    return {
+        paths,
+        fallback: 'blocking'
+    }
+}
