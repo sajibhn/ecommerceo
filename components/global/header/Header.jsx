@@ -6,7 +6,6 @@ import { useStateContext } from '../../context/EcommerceContext'
 
 const Header = () => {
     const { showCart, setShowCart } = useStateContext();
-    console.log(showCart)
     return (
         <>
             <header className="header">
