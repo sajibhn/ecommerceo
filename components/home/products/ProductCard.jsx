@@ -7,7 +7,6 @@ import { urlFor } from '../../../sanity';
 
 const ProductCard = ({ product }) => {
     const { slug, image, name, price, rating } = product
-    console.log((image[0]))
     return (
 
         <>

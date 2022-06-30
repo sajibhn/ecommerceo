@@ -7,7 +7,6 @@ const SingleProduct = ({ product }) => {
     const [index, setIndex] = useState(0);
 
     const { Category, image, name, price, rating, details } = product
-    console.log(Category)
     return (
         <div className='container'>
             <div className="product-detail-container">

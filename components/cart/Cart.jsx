@@ -2,14 +2,18 @@ import React from 'react'
 import Link from 'next/link';
 import { AiOutlineMinus, AiOutlinePlus, AiOutlineLeft, AiOutlineShopping } from 'react-icons/ai';
 import { TiDeleteOutline } from 'react-icons/ti';
+import { useStateContext } from '../context/EcommerceContext';
 
 const Cart = () => {
+    const { setShowCart } = useStateContext()
     return (
         <div className="cart-wrapper">
             <div className="cart-container">
                 <button
                     type="button"
-                    className="cart-heading">
+                    className="cart-heading"
+                    onClick={() => setShowCart(false)}
+                >
                     <AiOutlineLeft />
                     <span className="heading">Your Cart</span>
                     <span className="cart-num-items">(5 items)</span>
