@@ -21,7 +21,8 @@ const ProductCard = () => {
                         editing={false}
                         renderStarIcon={() => <span><AiFillStar /></span>}
                         starCount={5}
-                        value={5}
+                        value={4}
+                        starColor="#e12c43"
                     />
                 </div>
                 <div className='product__info'>
