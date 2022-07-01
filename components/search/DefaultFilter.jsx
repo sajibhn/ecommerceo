@@ -1,16 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Select from 'react-select'
 
-const DefaultFilter = () => {
-    const options = [
-        { value: 'chocolate', label: 'Chocolate' },
-        { value: 'strawberry', label: 'Strawberry' },
-        { value: 'vanilla', label: 'Vanilla' }
-    ]
+const options = [
+    { value: 'price', label: 'Sort by price' },
+]
+const DefaultFilter = ({ setSortBy }) => {
+    const [selectedOption, setSelectedOption] = useState(null);
+    setSelectedOption(
+        setSortBy(selectedOption)
+    )
     return (
         <div className="filter__price">
             <div>
-                <Select options={options} placeholder="Pick a Price" />
+                <Select
+                    options={options}
+                    placeholder="Sort by"
+                    defaultValue={selectedOption}
+                    onChange={setSelectedOption} />
             </div>
         </div>
     )

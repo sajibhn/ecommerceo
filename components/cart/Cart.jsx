@@ -8,7 +8,6 @@ import { urlFor } from '../../sanity';
 const Cart = () => {
     const cartRef = useRef();
     const { totalPrice, totalQuantities, cartItems, setShowCart, toggleCartItemQuanitity, onRemove } = useStateContext();
-    console.log(cartItems, "c")
     return (
         <div className="cart-wrapper" ref={cartRef}>
             <div className="cart-container">

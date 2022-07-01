@@ -5,7 +5,7 @@ import Cart from '../../cart/Cart'
 import { useStateContext } from '../../context/EcommerceContext'
 
 const Header = () => {
-    const { showCart, setShowCart } = useStateContext();
+    const { showCart, setShowCart, totalQuantities } = useStateContext();
     return (
         <>
             <header className="header">
@@ -17,7 +17,7 @@ const Header = () => {
                     </div>
                     <div className="nav__cart" onClick={() => setShowCart(true)}>
                         <BsHandbag />
-                        <span className='nav__cart-item'>0</span>
+                        <span className='nav__cart-item'>{totalQuantities}</span>
                     </div>
 
                     {showCart && <Cart />}
