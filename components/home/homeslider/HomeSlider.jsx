@@ -9,8 +9,8 @@ const HomeSlider = () => {
 
     async function FetchProducts() {
         const query = '*[_type == "homeSlider"]';
-        const products = await sanityClient.fetch(query);
-        setSlider(products);
+        const allSlider = await sanityClient.fetch(query);
+        setSlider(allSlider);
     }
 
     useEffect(() => {

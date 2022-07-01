@@ -1,15 +1,17 @@
 import Link from 'next/link'
 import React from 'react'
+import { urlFor } from '../../../sanity'
 
-const BannerRight = () => {
+const BannerRight = ({ rightBanner }) => {
+    const { image, heading, description } = rightBanner
     return (
         <div className="banner__right">
-            <img src="https://cdn.shopify.com/s/files/1/0563/9661/1673/files/banner1.jpg?v=1650851612" alt="" />
+            <img src={urlFor(image)} alt="" />
             <div className='banner__content'>
                 <div >
-                    <h3>Women</h3>
+                    <h3>{heading}</h3>
                     <p>
-                        Inspice t-shirts mulierum cum diversis rationibus et generibus.
+                        {description}
                     </p>
                     <Link href='/product'>
                         <a className="button">shop now</a>
