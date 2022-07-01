@@ -1,16 +1,11 @@
-import Hero from '../components/home/hero/Hero'
-import Products from '../components/home/products/Products'
-import { sanityClient } from '../sanity'
+import HomeSlider from '../components/home/homeslider/HomeSlider'
 
 
-export default function Home({ products }) {
+export default function Home() {
 
   return (
     <>
-      <>
-        <Hero />
-        <Products products={products} />
-      </>
+      <HomeSlider />
     </>
   )
 
@@ -18,13 +13,6 @@ export default function Home({ products }) {
 }
 
 
-export const getServerSideProps = async () => {
-  const query = '*[_type == "product"]';
-  const products = await sanityClient.fetch(query);
-
-
-  return {
-    props: { products }
-  }
-}
+// export const getServerSideProps = async () => {
+// }
 

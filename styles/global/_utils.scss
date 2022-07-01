@@ -49,3 +49,22 @@
 .btn:hover {
   transform: scale(1.1, 1.1);
 }
+
+.button {
+  background-color: $red;
+  border: 1px solid $red;
+  color: #fff;
+  outline: none;
+  line-height: 18px;
+  font-weight: 400;
+  padding: 10px 20px;
+  font-size: 14px;
+  text-transform: unset;
+  transition: all 0.5s;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: $red-alt;
+    border: 1px solid $red-alt;
+  }
+}
