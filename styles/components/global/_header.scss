@@ -17,11 +17,22 @@
 
     &__menu {
       display: flex;
-      gap: 10px;
+      gap: 30px;
       align-items: center;
+    }
+    &__list {
+      display: flex;
+      align-items: center;
+      column-gap: 30px;
+      flex-wrap: wrap;
+      @include sm {
+        text-align: right;
+      }
       a {
         color: $black;
-        margin-right: $m4;
+        @include sm {
+          width: 100%;
+        }
       }
     }
     &__cart {
