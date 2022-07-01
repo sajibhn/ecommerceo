@@ -5,6 +5,10 @@
   background-color: $white;
   padding: $p6;
 
+  @include sm {
+    margin-top: -20px;
+  }
+
   &__container {
     background-color: $white;
     @extend .grid;

@@ -5,6 +5,7 @@ import { useStateContext } from '../../context/EcommerceContext'
 import Select from 'react-select'
 
 const options = [
+    { value: 'all', label: 'All' },
     { value: 'shoes', label: 'Shoes' },
     { value: 'jeans', label: 'Jeans' },
     { value: 'tshirt', label: 'T-shirt' },
@@ -16,7 +17,12 @@ const Products = ({ products }) => {
     const { gridNumber, setGridNumber } = useStateContext();
     const [allProducts, setAllProducts] = useState(products)
     useEffect(() => {
+
         if (selectedOption) {
+            if (selectedOption.value === 'all') {
+                setAllProducts(products)
+                return
+            }
             setAllProducts(products)
             const newProducts = products.filter((item) => item.Category === selectedOption.value)
             setAllProducts(newProducts)
