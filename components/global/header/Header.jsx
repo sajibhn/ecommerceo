@@ -15,9 +15,19 @@ const Header = () => {
                             <h3>Ecommerceo</h3>
                         </Link>
                     </div>
-                    <div className="nav__cart" onClick={() => setShowCart(true)}>
-                        <BsHandbag />
-                        <span className='nav__cart-item'>{totalQuantities}</span>
+                    <div className='nav__menu'>
+                        <div>
+                            <Link href="/">
+                                <a >Home</a>
+                            </Link>
+                            <Link href="/products">
+                                <a >Products</a>
+                            </Link>
+                        </div>
+                        <div className="nav__cart" onClick={() => setShowCart(true)}>
+                            <BsHandbag />
+                            <span className='nav__cart-item'>{totalQuantities}</span>
+                        </div>
                     </div>
 
                     {showCart && <Cart />}

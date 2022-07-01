@@ -26,7 +26,7 @@ const Popular = () => {
                 }
             </div>
             <div className='popular__button'>
-                <Link href="/product">
+                <Link href="/products">
                     <a className="button">show more</a>
                 </Link>
             </div>

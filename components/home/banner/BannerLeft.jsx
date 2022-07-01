@@ -13,7 +13,7 @@ const BannerLeft = ({ leftBanner }) => {
                     <p>
                         {description}
                     </p>
-                    <Link href='/product'>
+                    <Link href='/products'>
                         <a className="button">shop now</a>
                     </Link>
                 </div>

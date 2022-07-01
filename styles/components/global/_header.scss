@@ -15,6 +15,15 @@
       }
     }
 
+    &__menu {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      a {
+        color: $black;
+        margin-right: $m4;
+      }
+    }
     &__cart {
       font-size: 1.5rem;
       color: $black;

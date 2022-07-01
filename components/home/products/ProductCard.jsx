@@ -15,7 +15,7 @@ const ProductCard = ({ product }) => {
 
             <div className='product__card'>
                 <div className="product__card__head">
-                    <Link href={`/product/${slug.current}`}>
+                    <Link href={`/products/${slug.current}`}>
                         <img src={urlFor(image && image[0])} alt="pro" />
                     </Link>
 

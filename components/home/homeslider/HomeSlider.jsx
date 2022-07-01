@@ -47,7 +47,7 @@ const HomeSlider = () => {
                                         <div className="product__slider__container container">
                                             <h1>{heading}</h1>
                                             <p>{description}</p>
-                                            <Link href="/product">
+                                            <Link href="/products">
                                                 <a className="button">show now</a>
                                             </Link>
                                         </div>
