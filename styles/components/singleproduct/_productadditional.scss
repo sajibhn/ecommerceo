@@ -1,0 +1,23 @@
+.product__additional {
+  margin-top: $m6;
+
+  h2 {
+    margin-bottom: $m2;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  p,
+  li {
+    color: $body-text;
+  }
+  p {
+    max-width: 650px;
+  }
+
+  ul {
+    margin-top: $m2;
+  }
+  .express {
+    margin-top: $m2;
+  }
+}

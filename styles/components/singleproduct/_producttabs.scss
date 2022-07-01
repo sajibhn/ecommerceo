@@ -1,0 +1,41 @@
+@import "./productdescription";
+@import "./productadditional";
+.react-tabs__tab-list {
+  border-top: 1px solid #e1e1e1;
+  border-bottom: 1px solid #e1e1e1 !important;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: $p2 0 !important;
+}
+.react-tabs__tab.react-tabs__tab--selected {
+  border: 2px solid $red !important;
+  border-bottom: 0 !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+  border-radius: 0;
+
+  &::before {
+    display: none;
+  }
+}
+.react-tabs__tab {
+  position: relative;
+  margin: 0 $m2;
+  &::before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: $red;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.3s ease;
+    transform-origin: center;
+  }
+
+  &:hover::before {
+    width: 100%;
+  }
+}

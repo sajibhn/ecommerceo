@@ -1,4 +1,5 @@
 @import "./services";
+@import "./producttabs";
 .product-detail-container {
   @extend .grid;
   grid-template-columns: 2fr 3fr;

@@ -3,6 +3,7 @@ import { AiOutlineMinus, AiOutlinePlus, AiFillStar } from 'react-icons/ai';
 import StarRatingComponent from 'react-star-rating-component';
 import { useStateContext } from '../../components/context/EcommerceContext';
 import Services from '../../components/singleproduct/Services';
+import ProductTabs from '../../components/singleproduct/Tabs';
 import { sanityClient, urlFor } from '../../sanity';
 
 const SingleProduct = ({ product }) => {
@@ -76,6 +77,7 @@ const SingleProduct = ({ product }) => {
             </div>
 
             <Services />
+            <ProductTabs />
         </div>
     )
 }

@@ -1,0 +1,16 @@
+.product__description {
+  margin-top: $m6;
+  @extend .grid;
+  grid-template-columns: 2fr 3fr;
+  color: $body-text;
+
+  @include md {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  div {
+    img {
+      width: 100%;
+    }
+  }
+}
