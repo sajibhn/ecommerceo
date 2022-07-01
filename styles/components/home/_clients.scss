@@ -1,0 +1,20 @@
+.clients {
+  background: #f8f8f8;
+  &__container {
+    @extend .grid;
+    gap: 1rem;
+    padding: $p10 0;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 155px));
+
+    div {
+      img {
+        cursor: pointer;
+        transform: scale(1);
+        transition: all 0.3s ease;
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+}
