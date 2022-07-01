@@ -1,0 +1,34 @@
+.services {
+  &__container {
+    @extend .grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    @include lm {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include md {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    @include sm {
+      gap: 0.5rem;
+    }
+
+    div {
+      border: 1px solid #ccc;
+      text-align: center;
+      padding: $p4;
+      svg {
+        font-size: 3rem;
+        color: $red;
+        margin-bottom: $m1;
+      }
+      span {
+        display: block;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+    }
+  }
+}

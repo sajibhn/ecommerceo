@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { AiOutlineMinus, AiOutlinePlus, AiFillStar } from 'react-icons/ai';
 import StarRatingComponent from 'react-star-rating-component';
 import { useStateContext } from '../../components/context/EcommerceContext';
+import Services from '../../components/singleproduct/Services';
 import { sanityClient, urlFor } from '../../sanity';
 
 const SingleProduct = ({ product }) => {
@@ -73,6 +74,8 @@ const SingleProduct = ({ product }) => {
                     </div>
                 </div>
             </div>
+
+            <Services />
         </div>
     )
 }
