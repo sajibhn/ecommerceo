@@ -6,14 +6,15 @@ import BannerRight from './BannerRight'
 const Banner = () => {
     const [banner, setBanner] = useState([]);
 
-    async function FetchProducts() {
+    async function FetchBanner() {
         const query = '*[_type == "banner"]';
         const allBanner = await sanityClient.fetch(query);
         setBanner(allBanner);
     }
     useEffect(() => {
-        FetchProducts();
+        FetchBanner();
     }, []);
+    if (!banner.length) return <p>Loading ....</p>
     return (
         <section className="section banner">
             <div className="banner__container container">

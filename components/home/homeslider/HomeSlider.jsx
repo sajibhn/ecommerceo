@@ -7,16 +7,17 @@ import { sanityClient, urlFor } from "../../../sanity";
 const HomeSlider = () => {
     const [slider, setSlider] = useState([]);
 
-    async function FetchProducts() {
+    async function FetchSlider() {
         const query = '*[_type == "homeSlider"]';
         const allSlider = await sanityClient.fetch(query);
         setSlider(allSlider);
     }
 
     useEffect(() => {
-        FetchProducts();
+        FetchSlider();
     }, []);
 
+    if (!slider.length) return <p>Loading ....</p>
     return (
         <>
             <div>
@@ -34,11 +35,11 @@ const HomeSlider = () => {
                         pauseOnMouseEnter: true,
                     }}
                 >
-                    {slider.map((item) => {
+                    {slider.map((item, index) => {
                         const { image, heading, description } = item;
                         return (
                             <>
-                                <SwiperSlide>
+                                <SwiperSlide key={index}>
                                     <div
                                         className="product__slider"
                                         style={{ backgroundImage: `url(${urlFor(image)})` }}
