@@ -3,7 +3,6 @@
 .product-detail-container {
   @extend .grid;
   grid-template-columns: 2fr 3fr;
-  margin: $m5;
   margin-top: $m7;
   color: #324d67;
   flex-wrap: nowrap;
@@ -59,14 +58,23 @@
     }
     .category {
       margin-top: $m2;
+      @include sm {
+        text-align: center;
+      }
     }
     .buttons {
       display: flex;
       gap: 30px;
+      flex-wrap: wrap;
+      margin-top: $m5;
+
+      @include sm {
+        justify-content: center;
+      }
+
       .add-to-cart {
         padding: 10px 20px;
         border: 1px solid $red;
-        margin-top: $m5;
         font-size: 1.1rem;
         font-weight: 500;
         background-color: $white;
@@ -87,7 +95,6 @@
         background-color: $red;
         color: $white;
         border: none;
-        margin-top: $m5;
         font-size: 1.1rem;
         font-weight: 500;
         cursor: pointer;
