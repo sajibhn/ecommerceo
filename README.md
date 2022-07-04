@@ -1,6 +1,6 @@
 # Ecommerceo - Buy Fashionable Clothes
 
-This is a website where you can buy clothes and shoes. I have designed and developed this website using Next JS and Sass. I have used Sanity headless CMS for the backend and React Context API to manage states. I have used GROQ to fetch data from the backend. To create this project, I have taken inspiration from various themes and templates.
+An ecommerce website where a customer and buy products. I have implemented a filtering option that sorts the products by their category. I have used Next js and Sass to build the UI, and Sanity headless CMS as a backend. I am fetching data using GROQ and managing states using Context API
 
 ## Links
 
