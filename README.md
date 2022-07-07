@@ -1,6 +1,6 @@
 # Ecommerceo - Buy Fashionable Clothes
 
-An ecommerce website where a customer and buy products. I have implemented a filtering option that sorts the products by their category. I have used Next js and Sass to build the UI, and Sanity headless CMS as a backend. I am fetching data using GROQ and managing states using Context API
+An ecommerce website where a customer can buy products. I have implemented a filtering option that sorts the products by their category. I have used Next js and Sass to build the UI, and Sanity headless CMS as a backend. I am fetching data using GROQ and managing states using Context API
 
 ## Links
 
